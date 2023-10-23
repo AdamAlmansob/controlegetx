@@ -14,6 +14,8 @@ class AppRoute {
   static const String homePage = "/homepage";
   static const String drawePage = "/drawerpage";
   //
+  static const String homeMessage = "/homemessage";
+  static const String createPost = "/createpost";
   static const String firstPageMessage = "/firstpagemessage";
   static const String secondePageMessage = "/secondepagemessage";
 }

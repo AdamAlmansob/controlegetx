@@ -20,11 +20,11 @@ class VerfiyCode extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,
-        title: Text('Verification Code',
-            style: Theme.of(context)
-                .textTheme
-                .headline1!
-                .copyWith(color: AppColor.grey)),
+        title: const Text('Verification Code',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color: AppColor.grey)),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
@@ -33,7 +33,7 @@ class VerfiyCode extends StatelessWidget {
           const CustomTextTitleAuth(text: "Check code"),
           const SizedBox(height: 10),
           const CustomTextBodyAuth(
-              text: "Please Enter The Digit Code Sent To wael@gmail.com"),
+              text: "Please Enter The Digit Code Sent To \n ..."),
           const SizedBox(height: 15),
           OtpTextField(
             fieldWidth: 50.0,

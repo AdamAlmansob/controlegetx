@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable, prefer_const_constructors_in_immutables, sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables
 
 import 'package:controlgetx/control/home_page_controller.dart';
+import 'package:controlgetx/core/constant/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 //import 'package:marketing_platform_new/mode/Model/Product.dart';
@@ -48,6 +49,7 @@ class DrowerTwo2 extends StatelessWidget {
               ],
             ),
             onTap: () {
+              Get.toNamed(AppRoute.signUp);
               //Navigator.pop(context);
               //Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddProdectPage()));
             },
@@ -117,7 +119,8 @@ class DrowerTwo2 extends StatelessWidget {
               ],
             ),
             onTap: () {
-              controller.goToFirestPageMessage();
+              //controller.goToFirestPageMessage();
+              Get.toNamed(AppRoute.homeMessage);
               // Navigator.pop(context);
               //Navigator.of(context).push(MaterialPageRoute(builder: (context) => MessagePage()));
             },

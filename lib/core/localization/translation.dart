@@ -60,6 +60,9 @@ class MyTranslation extends Translations {
           "52": " قائمة المراسلات ",
           "53": " الإعدادات ",
           "54": " نبذة عن المنصة ",
+          "55": " الصفحة الرئيسية للرسائل ",
+          "56": "لا يوجد اي مراسلة \nإضغط على + لاضافة مراسلة ",
+          "57": "إنشاء مراسلة",
         },
         "en": {
           "1": "Choose Language",
@@ -120,6 +123,9 @@ class MyTranslation extends Translations {
           "52": "List Of Mail ",
           "53": " The Settings ",
           "54": " About The Podium ",
+          "55": "   Main Page Of Messages  ",
+          "56": " enter on the + to add messages\n no found any messages",
+          "57": "Create Messages",
         }
       };
 }

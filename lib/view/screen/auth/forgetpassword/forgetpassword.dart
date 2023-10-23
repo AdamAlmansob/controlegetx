@@ -23,10 +23,10 @@ class ForgetPassword extends StatelessWidget {
         backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,
         title: Text('14'.tr,
-            style: Theme.of(context)
-                .textTheme
-                .headline1!
-                .copyWith(color: AppColor.grey)),
+            style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color: AppColor.grey)),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),

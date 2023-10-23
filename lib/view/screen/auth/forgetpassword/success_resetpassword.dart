@@ -19,11 +19,11 @@ class SuccessResetPassword extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,
-        title: Text('Success',
-            style: Theme.of(context)
-                .textTheme
-                .headline1!
-                .copyWith(color: AppColor.grey)),
+        title: const Text('Success',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color: AppColor.grey)),
       ),
       body: Container(
         padding: const EdgeInsets.all(15),

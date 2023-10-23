@@ -15,7 +15,7 @@ class ConfigureApplication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(ConfigureappControllerImp());
+    ConfigureappControllerImp controller = Get.put(ConfigureappControllerImp());
     return Scaffold(
       //appBar:
 
@@ -64,6 +64,7 @@ class ConfigureApplication extends StatelessWidget {
                         icon: const Icon(Icons.save_as),
                         color: AppColor.primaryColor,
                         onPressed: () {
+                          controller.next();
                           // Navigator.of(context).push(MaterialPageRoute(builder: (context) => AdamPage()));
                         },
                       )), // Icon(Icons.save)

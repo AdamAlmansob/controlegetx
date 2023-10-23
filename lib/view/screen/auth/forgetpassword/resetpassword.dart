@@ -23,11 +23,11 @@ class ResetPassword extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,
-        title: Text('ResetPassword',
-            style: Theme.of(context)
-                .textTheme
-                .headline1!
-                .copyWith(color: AppColor.grey)),
+        title: const Text('ResetPassword',
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color: AppColor.grey)),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
@@ -35,10 +35,10 @@ class ResetPassword extends StatelessWidget {
           key: controller.formstate,
           child: ListView(children: [
             const SizedBox(height: 20),
-            CustomTextTitleAuth(text: "35".tr),
-            const SizedBox(height: 10),
+            //CustomTextTitleAuth(text: "35".tr),
+            const SizedBox(height: 20),
             CustomTextBodyAuth(text: "35".tr),
-            const SizedBox(height: 15),
+            const SizedBox(height: 25),
             CustomTextFormAuth(
               isNumber: false,
               valid: (val) {

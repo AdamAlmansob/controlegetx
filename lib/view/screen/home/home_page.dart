@@ -5,7 +5,7 @@ import 'package:controlgetx/view/screen/home/drower.dart';
 
 import 'package:controlgetx/view/widget/home_widget/part_one/partoneofhome.dart';
 import 'package:controlgetx/view/widget/home_widget/partthreeofhome.dart';
-import 'package:controlgetx/view/widget/home_widget/parttwoofhome.dart';
+import 'package:controlgetx/view/widget/home_widget/part_two/parttwoofhome.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

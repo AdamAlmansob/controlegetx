@@ -32,7 +32,7 @@ class VerfiyCodeSignUp extends StatelessWidget {
           const CustomTextTitleAuth(text: "Check code"),
           const SizedBox(height: 10),
           const CustomTextBodyAuth(
-              text: "Please Enter The Digit Code Sent To wael@gmail.com"),
+              text: "Please Enter The Digit Code Sent To \n ..."),
           const SizedBox(height: 15),
           OtpTextField(
             fieldWidth: 50.0,

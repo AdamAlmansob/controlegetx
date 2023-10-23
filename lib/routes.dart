@@ -12,7 +12,9 @@ import 'package:controlgetx/view/screen/configure_app/configure_app.dart';
 import 'package:controlgetx/view/screen/home/drower.dart';
 import 'package:controlgetx/view/screen/home/home_page.dart';
 import 'package:controlgetx/view/screen/messages/firestpagemessage.dart';
+import 'package:controlgetx/view/screen/messages/homemessage.dart';
 import 'package:controlgetx/view/screen/messages/secondepagemessage.dart';
+import 'package:controlgetx/view/screen/new/create_poste.dart';
 import 'package:controlgetx/view/widget/configur/language/language_app%20.dart';
 import 'package:controlgetx/view/widget/configur/theme/theme_app.dart';
 
@@ -39,6 +41,8 @@ List<GetPage<dynamic>>? routes = [
   //
   GetPage(name: AppRoute.homePage, page: () => const HomePage()),
   GetPage(name: AppRoute.drawePage, page: () => const DrowerTwo2()),
+  GetPage(name: AppRoute.homeMessage, page: () => const HomeMessage()),
+  GetPage(name: AppRoute.createPost, page: () => const CreatePost()),
   GetPage(
       name: AppRoute.firstPageMessage, page: () => const FirestPageMessage()),
   GetPage(
