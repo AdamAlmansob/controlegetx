@@ -2,12 +2,14 @@
 
 import 'package:controlgetx/control/messages/homepagemessage_controller.dart';
 import 'package:controlgetx/core/constant/color.dart';
+import 'package:controlgetx/core/functions/validinput.dart';
 import 'package:controlgetx/model/new/servermessage.dart';
 import 'package:controlgetx/view/screen/new/edit_poste.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '/control/messages/homepagemessage_controller.dart';
+import 'package:flutter/rendering.dart';
 
 class PartTwoCreateMessage extends StatefulWidget {
   const PartTwoCreateMessage({super.key});
@@ -16,67 +18,11 @@ class PartTwoCreateMessage extends StatefulWidget {
 }
 
 class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
-  final TextEditingController _userNameTD = TextEditingController();
-  final TextEditingController _postTitleTD = TextEditingController();
-  final TextEditingController _postTextTD = TextEditingController();
-
-  _clearTextInput() {
-    _userNameTD.text = '';
-    _postTitleTD.text = '';
-    _postTextTD.text = '';
-  }
-
-  _createTable() {
-    Services.createTable().then((result) {
-      if ('success' == result) {
-        if (kDebugMode) {
-          print('success to create table');
-        }
-      } else {
-        if (kDebugMode) {
-          print('failed to create table');
-        }
-      }
-    });
-  }
-
-  _addPost() {
-    _createTable(); // _postTitleTD.text.isEmpty ||
-    if (_userNameTD.text.isEmpty || _postTextTD.text.isEmpty) {
-      if (kDebugMode) {
-        print('Empty Field');
-      }
-      return;
-    } else {
-      Services.addPost(
-              _userNameTD.text,
-              //_postTitleTD.text,
-              _postTextTD.text)
-          .then((result) {
-        if ('success' == result) {
-          _clearTextInput();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Colors.blue,
-              content: Row(
-                children: const [
-                  Icon(Icons.thumb_up, color: Colors.white),
-                  Text(
-                    'تم اضافة المراسلة',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }
-      });
-    }
-  }
+  //final TextEditingController username = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    HomePageMessageControllerImp controller =
+    HomePageMessageControllerImp controllerHomMess =
         Get.put(HomePageMessageControllerImp());
     //final HomePageMessageControllerImp controllerhome = Get.find();
     //List _posts = [];
@@ -95,6 +41,8 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
         //	child: 	//List.generate(length, (index) => null),
         child: Center(
           child: SingleChildScrollView(
+            //SingleChildScrollView =false
+
             child: Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -116,12 +64,24 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
                       //margin: EdgeInsets.only(left: 5,right: 5,top: 5,bottom: 5),
                       padding: const EdgeInsets.symmetric(horizontal: 5),
                       decoration: BoxDecoration(
-                        color: Colors.black12,
+                        color: AppColor.backgroundcolor,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: SingleChildScrollView(
                         child: Column(children: [
                           const SizedBox(height: 20),
+                          CustomBottomText(
+                            isNumber: false,
+                            valid: (val) {
+                              return validInput(val!, 3, 20, "username");
+                            },
+                            mycontroller: controllerHomMess.username,
+                            hinttext: "23".tr,
+                            iconData: Icons.person_outline,
+                            labeltext: "20".tr,
+                            // mycontroller: ,
+                          ),
+                          /*
                           TextFormField(
                             controller: _userNameTD,
                             textAlign: TextAlign.end,
@@ -130,7 +90,7 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
                             ),
                             decoration: InputDecoration(
                                 hintText: " اسم المستخدم",
-                                hintStyle: const TextStyle(fontSize: 14),
+                                hintStyle: const TextStyle(fontSize: 10),
                                 floatingLabelBehavior:
                                     FloatingLabelBehavior.always,
                                 contentPadding: const EdgeInsets.symmetric(
@@ -143,6 +103,7 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30))),
                           ),
+                          */
                           const SizedBox(height: 20),
                           /*
                            TextField(
@@ -158,7 +119,7 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
                         */
                           const SizedBox(height: 20),
                           TextFormField(
-                            controller: _postTextTD,
+                            controller: controllerHomMess.postTextTD,
                             textAlign: TextAlign.end,
                             style: const TextStyle(
                               fontSize: 20,
@@ -198,7 +159,7 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
                           textColor: Colors.white,
                           onPressed: () {
                             // controller.next();
-                            _addPost();
+                            controllerHomMess.addPost();
                           },
                           color: AppColor.primaryColor,
                           child: Text("مراسلة")),
@@ -241,3 +202,51 @@ CustomTextFormAuth(
                 ),
                 */
 
+class CustomBottomText extends StatelessWidget {
+  final String hinttext;
+  final String labeltext;
+  final IconData iconData;
+  final TextEditingController? mycontroller;
+  final String? Function(String?) valid;
+  final bool isNumber;
+  final bool? obscureText;
+  final void Function()? onTapIcon;
+
+  const CustomBottomText(
+      {Key? key,
+      this.obscureText,
+      this.onTapIcon,
+      required this.hinttext,
+      required this.labeltext,
+      required this.iconData,
+      required this.mycontroller,
+      required this.valid,
+      required this.isNumber})
+      : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 20),
+      child: TextFormField(
+        keyboardType: isNumber
+            ? const TextInputType.numberWithOptions(decimal: true)
+            : TextInputType.text,
+        validator: valid,
+        controller: mycontroller,
+        obscureText: obscureText == null || obscureText == false ? false : true,
+        decoration: InputDecoration(
+            hintText: hinttext,
+            hintStyle: const TextStyle(fontSize: 14),
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+            label: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 9),
+                child: Text(labeltext!)),
+            suffixIcon: InkWell(child: Icon(iconData), onTap: onTapIcon),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
+      ),
+    );
+  }
+}

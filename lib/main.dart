@@ -1,10 +1,11 @@
+import 'package:controlgetx/bindings/intialbindings.dart';
 import 'package:controlgetx/core/localization/changelocal.dart';
 import 'package:controlgetx/core/localization/translation.dart';
 import 'package:controlgetx/core/services/services.dart';
 import 'package:controlgetx/routes.dart';
 import 'package:controlgetx/view/screen/configure_app/configure_app.dart';
 import 'package:controlgetx/view/screen/messages/homemessage.dart';
-import 'package:controlgetx/view/screen/new/postes_screen.dart';
+
 //import 'package:controlgetx/view/widget/configur/theme/theme_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       locale: controller.language,
       //theme: controller.appTheme,
       //theme: ThemeApp.customDarkTheme,
+      initialBinding: InitialBindings(),
 
       theme: ThemeData.light(),
 

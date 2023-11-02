@@ -24,17 +24,16 @@ class LoginControllerImp extends LoginController {
   @override
   login() {
     // new
-    Get.offNamed(AppRoute.homePage);
+    // Get.offNamed(AppRoute.homePage);
 
     //
-    /*
+
     var formdata = formstate.currentState;
     if (formdata!.validate()) {
-      print("Valid");
+      Get.offNamed(AppRoute.homePage);
     } else {
       print("Not Valid");
     }
-     */
   }
 
   @override

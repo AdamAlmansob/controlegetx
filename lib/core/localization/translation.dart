@@ -63,6 +63,12 @@ class MyTranslation extends Translations {
           "55": " الصفحة الرئيسية للرسائل ",
           "56": "لا يوجد اي مراسلة \nإضغط على + لاضافة مراسلة ",
           "57": "إنشاء مراسلة",
+          "58": "    صفحة حذف مستخدمين  ",
+          "59": "  صفحة تعديل المستخدمين  ",
+          "60": "  صفحة الإعدادات  ",
+          "61": " إضافة إعلان ",
+          "62": " إضافة صورة ",
+          "63": " الخروج من التطبيق ",
         },
         "en": {
           "1": "Choose Language",
@@ -126,6 +132,12 @@ class MyTranslation extends Translations {
           "55": "   Main Page Of Messages  ",
           "56": " enter on the + to add messages\n no found any messages",
           "57": "Create Messages",
+          "58": "    Page Of Delete Users  ",
+          "59": "    Page Of Edit Users  ",
+          "60": "    Page Settings  ",
+          "61": " Add Ad ",
+          "62": " Add Image ",
+          "63": "OutSide Of Application ",
         }
       };
 }

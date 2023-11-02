@@ -14,8 +14,16 @@ class AppRoute {
   static const String homePage = "/homepage";
   static const String drawePage = "/drawerpage";
   //
+  static const String editUserPage = "/edituserpage";
+  static const String editUserSecond = "/editusersecond";
+  static const String deleteUsers = "/deleteusers";
   static const String homeMessage = "/homemessage";
+  static const String settingsPage = "/settingspage";
+  static const String definitionAboutPlatform = "/definitionaboutplatform";
   static const String createPost = "/createpost";
   static const String firstPageMessage = "/firstpagemessage";
   static const String secondePageMessage = "/secondepagemessage";
+  //
+  static const String addAds = "/addads";
+  static const String addImageAds = "/addimageads";
 }

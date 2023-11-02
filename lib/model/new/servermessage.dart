@@ -8,7 +8,7 @@ import 'dart:convert';
 //
 class Services {
   static var url = Uri.parse(
-      'https:/localhost/controlgetx/post_api.php'); // 'https://www.hostinger.ae/controlgetx/post_api.php'
+      'https://dash.infinityfree.com/accounts/if0_35294550'); // https://dash.infinityfree.com/accounts/if0_35294550
 
   static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
   static const _ADD_POST_ACTION = 'ADD_POST';

@@ -4,6 +4,7 @@ import 'package:controlgetx/control/home_page_controller.dart';
 import 'package:controlgetx/core/constant/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:controlgetx/core/constant/color.dart';
 //import 'package:marketing_platform_new/mode/Model/Product.dart';
 
 class DrowerTwo2 extends StatelessWidget {
@@ -26,7 +27,7 @@ class DrowerTwo2 extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              color: AppColor.primary,
             ),
           ),
           ListTile(
@@ -36,7 +37,7 @@ class DrowerTwo2 extends StatelessWidget {
                   flex: 1,
                   child: Icon(
                     Icons.add,
-                    color: Colors.orange,
+                    color: AppColor.primaryColor,
                   ),
                 ),
                 Expanded(
@@ -61,7 +62,7 @@ class DrowerTwo2 extends StatelessWidget {
                     flex: 1,
                     child: Icon(
                       Icons.edit,
-                      color: Colors.orange,
+                      color: AppColor.primaryColor,
                     )),
                 Expanded(
                   flex: 3,
@@ -74,6 +75,7 @@ class DrowerTwo2 extends StatelessWidget {
             ),
             onTap: () {
               //Navigator.pop(context);
+              Get.toNamed(AppRoute.editUserPage);
               //	Navigator.of(context).push(MaterialPageRoute(builder: (context) => AdamPage()));
               var myProdect;
             },
@@ -85,7 +87,7 @@ class DrowerTwo2 extends StatelessWidget {
                     flex: 1,
                     child: Icon(
                       Icons.delete,
-                      color: Colors.orange,
+                      color: AppColor.primaryColor,
                     )),
                 Expanded(
                   flex: 3,
@@ -98,6 +100,7 @@ class DrowerTwo2 extends StatelessWidget {
             ),
             onTap: () {
               //Navigator.pop(context);
+              Get.toNamed(AppRoute.deleteUsers);
             },
           ),
           ListTile(
@@ -107,7 +110,7 @@ class DrowerTwo2 extends StatelessWidget {
                     flex: 1,
                     child: Icon(
                       Icons.message_sharp,
-                      color: Colors.orange,
+                      color: AppColor.primaryColor,
                     )),
                 Expanded(
                   flex: 3,
@@ -132,7 +135,7 @@ class DrowerTwo2 extends StatelessWidget {
                     flex: 1,
                     child: Icon(
                       Icons.settings,
-                      color: Colors.orange,
+                      color: AppColor.primaryColor,
                     )),
                 Expanded(
                   flex: 3,
@@ -145,7 +148,7 @@ class DrowerTwo2 extends StatelessWidget {
             ),
             onTap: () {
               //Navigator.pop(context);
-
+              Get.toNamed(AppRoute.settingsPage);
               //	Navigator.of(context).push(MaterialPageRoute(builder: (context) => AdamPage()));
             },
           ),
@@ -156,7 +159,7 @@ class DrowerTwo2 extends StatelessWidget {
                     flex: 1,
                     child: Icon(
                       Icons.devices_fold_outlined,
-                      color: Colors.orange,
+                      color: AppColor.primaryColor,
                     )),
                 Expanded(
                   flex: 3,
@@ -169,7 +172,7 @@ class DrowerTwo2 extends StatelessWidget {
             ),
             onTap: () {
               //Navigator.pop(context);
-
+              Get.toNamed(AppRoute.definitionAboutPlatform);
               //	Navigator.of(context).push(MaterialPageRoute(builder: (context) => AdamPage()));
             },
           ),
