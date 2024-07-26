@@ -3,8 +3,10 @@
 import 'dart:io';
 
 import 'package:controlgetx/core/constant/routes.dart';
+import 'package:controlgetx/core/functions/alertexitapp.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:images_picker/images_picker.dart';
 //import 'package:image_picker/image_picker.dart';
 //import 'package:image_picker/image_picker.dart';
@@ -13,18 +15,22 @@ import 'package:images_picker/images_picker.dart';
 abstract class SettingsController extends GetxController {}
 
 class SettingsControllerImp extends SettingsController {
+  File? _image;
   bool isload = true;
   var _formKey = GlobalKey<FormState>();
-  late File _image;
   final picker = ImagePicker();
   bool image_icon = true;
   //bool isload = true;
   DateTime _DateProdect = DateTime.now();
+  
+  //get source => null;
 
   // هذا بيتم ايضا حذفة
   //get picker => null;
 
   Future<void> chooseDate(BuildContext context) async {
+    var source;
+    final pickedFile = await ImagePicker().pickImage(source: source);
     final DateTime? picked = await showDatePicker(
         context: context,
         selectableDayPredicate: (dateTime) {
@@ -51,7 +57,6 @@ class SettingsControllerImp extends SettingsController {
     var image = await picker.pickImage(source: ImageSource.gallery);
     //setState(() {
     if (image != null) {
-      _image = File(image.path);
       //setState(() {
       isload = false;
       //});
@@ -73,7 +78,6 @@ class SettingsControllerImp extends SettingsController {
     var image = await picker.pickImage(source: ImageSource.camera);
     //setState(() {
     if (image != null) {
-      _image = File(image.path);
 
       ///setState(() {
       isload = false;
@@ -118,17 +122,25 @@ class SettingsControllerImp extends SettingsController {
   goToAddImageAds() {
     Get.toNamed(AppRoute.addImageAds);
   }
+
+  goToOutSide() {
+    //Get.toNamed(AppRoute.alertExitApp );
+    //alertExitApp;
+  }
 }
 
+/*
 class ImageSource {
   static var camera;
-  
+
   static var gallery;
 }
 
 class ImagePicker {
   pickImage({required source}) {}
 }
+
+*/
 
 // سيتم حذفة عند توفر النت
 

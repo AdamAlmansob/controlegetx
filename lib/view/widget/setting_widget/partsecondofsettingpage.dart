@@ -1,7 +1,10 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'dart:io';
+
 import 'package:controlgetx/control/settings_controller.dart';
 import 'package:controlgetx/core/constant/color.dart';
+import 'package:controlgetx/core/functions/alertexitapp.dart';
 import 'package:controlgetx/view/widget/setting_widget/partoneofsettingpage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,7 +85,10 @@ class PartSecondOfSettingsPage extends StatelessWidget {
               ],
             ),
             onTap: () {
-              // controlSetting
+              //controlSetting.goToOutSide();
+              //alertExitApp;
+              //alertExitApp as bool;
+              exit(0);
             },
           ),
         ],

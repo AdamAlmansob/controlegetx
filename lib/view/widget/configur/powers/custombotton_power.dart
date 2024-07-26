@@ -6,13 +6,13 @@ import 'package:get/get.dart';
 class CustomButtonPowers extends StatelessWidget {
   final String textbutton;
   final void Function(bool c)? onPressed;
-  final bool use;
+  //late final bool use;
   //final void Function(bool v)? onChanged;
   const CustomButtonPowers({
     Key? key,
     required this.textbutton,
     this.onPressed,
-    required this.use,
+    //required this.use,
     //this.onChanged,
   }) : super(key: key);
 
@@ -22,7 +22,8 @@ class CustomButtonPowers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //bool use = false;
+    bool use = false;
+    bool useT = false;
     Get.put(LocaleControllerPowers());
     //bool tristate = false;
     return InkWell(
@@ -32,26 +33,7 @@ class CustomButtonPowers extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Checkbox(
-            //isThreeLinr:true,
-            //controlAffinity
-            //tristate: true,
-            //color: AppColor.primaryColor,
-            //tileColor: Colors.white,
-            //title: Text(textbutton,
-            //    style: const TextStyle(fontWeight: FontWeight.bold)),
-            value: use,
-            onChanged: (val) {
-              //onPressed;
-              val = use;
-              //Colors.amber;
-            },
-
-            //textColor: Colors.white,
-            //onPressed: onPressed,
-            //child: Text(textbutton,
-            //    style: const TextStyle(fontWeight: FontWeight.bold)),
-          ),
+          
           Text(textbutton, style: const TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),

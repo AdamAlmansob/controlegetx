@@ -1,20 +1,27 @@
 // ignore_for_file: unnecessary_import
 
 //import 'package:controlgetx/core/constant/color.dart';
+import 'package:controlgetx/core/localization/changelocal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-class CustomButtonTheme extends StatelessWidget {
+class CustomButtonTheme extends StatelessWidget  {
+  //final LocaleController controller = Get.put(LocaleController());
   final String textbutton;
   final void Function()? onPressed;
-  final bool use;
-  const CustomButtonTheme(
-      {Key? key, required this.textbutton, this.onPressed, required this.use})
+   bool use;
+   final bool useT;
+   CustomButtonTheme(
+      {Key? key, required this.textbutton, this.onPressed, required this.use ,required this.useT
+       })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //bool usee = false;
+    //bool use = false;
+    bool use2 = false;
     //var val;
     return InkWell(
       onTap: onPressed,
@@ -23,7 +30,10 @@ class CustomButtonTheme extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Checkbox(
+          
+          //Obx(() => Checkbox(value: (textbutton=='42'.tr)?controller.isd.value:controller.isl.value, onChanged: ( newValue) {(textbutton=='42'.tr)?controller.isd.value =newValue!:controller.isl.value =newValue!;  },)),
+           /*
+            Checkbox(
             //isThreeLinr:true,
             //controlAffinity
             //tristate: true,
@@ -32,9 +42,13 @@ class CustomButtonTheme extends StatelessWidget {
             //title: Text(textbutton,
             //    style: const TextStyle(fontWeight: FontWeight.bold)),
             value: use,
-            onChanged: (val) {
+            onChanged: ( newValue) {
+
               //onPressed;
-              //usee = use;
+              use = controller.changeCheckbox(textbutton);
+              if(use){
+                useT=false;
+              }
               /*
              setState:
               () {
@@ -48,6 +62,8 @@ class CustomButtonTheme extends StatelessWidget {
             //child: Text(textbutton,
             //    style: const TextStyle(fontWeight: FontWeight.bold)),
           ),
+          
+           */
           Text(textbutton, style: const TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
@@ -101,3 +117,14 @@ Container(
       ),
     )
 */
+
+
+chek(String c){
+  bool use=false;
+  return Checkbox(value: (c=='42'.tr )?(true):use, onChanged: (newValue){setState(() {
+      use=newValue!;
+    });});
+}
+
+void setState( Function() param0) {
+}

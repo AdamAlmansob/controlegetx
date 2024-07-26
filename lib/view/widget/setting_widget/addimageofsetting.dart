@@ -2,6 +2,8 @@ import 'package:controlgetx/control/settings_controller.dart';
 import 'package:controlgetx/view/widget/setting_widget/custmeditimagebuttom.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class AddImageSetting extends StatelessWidget {
   const AddImageSetting({super.key});

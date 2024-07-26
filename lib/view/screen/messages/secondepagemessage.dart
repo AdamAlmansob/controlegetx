@@ -2,6 +2,7 @@
 
 import 'package:controlgetx/control/messages/secondepagemessage_controller.dart';
 import 'package:controlgetx/core/constant/color.dart';
+import 'package:controlgetx/view/widget/configur/theme/custombuttontheme.dart';
 import 'package:controlgetx/view/widget/custmoutbondback.dart';
 import 'package:controlgetx/view/widget/message_widget/second/mybubblechatwidget.dart';
 import 'package:controlgetx/view/widget/message_widget/second/senderbubblechatwidget.dart';
@@ -84,14 +85,14 @@ class SecondePageMessage extends GetView<SecondePageMessageControllerImp> {
             //
             Expanded(
               child: Container(
-                child: ListView(
+                child:  ListView(
                   padding: EdgeInsets.all(16),
                   physics: BouncingScrollPhysics(),
                   reverse: true,
                   children: [
                     MyBubbleChatWidget(
                       chat:
-                          'أن نستمر في تطوير فكرتنا في العمل على النظام المحاسبي ثم الإستمرار بمراجعة دكتورنا الغالي على فترات  ',
+                          'chatList[index]',
                       time: '10:58',
                     ),
                     SenderBubbleChatWidget(
@@ -115,10 +116,31 @@ class SecondePageMessage extends GetView<SecondePageMessageControllerImp> {
                       chat: 'من قام بالعمل ',
                       time: '10:48',
                     ),
+                    MyBubbleChatWidget(
+                      chat: 'chatList[index]',
+                      time: '10:49',
+                    ),
+                    SenderBubbleChatWidget(
+                      chat: ' ',
+                      time: '10:48',
+                    ),
 
+                   Container(
+                     child: ListView.builder(
+                                   itemCount: chatList.length,
+                                   itemBuilder: (context, index) {
+                                     return 
+                                       MyBubbleChatWidget(
+                        chat:
+                            chatList[index],
+                        time: '10:58',
+                      )
+                                     
+                                     ;}),
+                   ),
                     // SenderBubbleChatWidget(chat: MassageNew , time: time)
                   ],
-                ),
+                )
               ),
 
               //new new
@@ -175,8 +197,7 @@ class SecondePageMessage extends GetView<SecondePageMessageControllerImp> {
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           onPressed: () {
-                            chatList.add(messageController.text +
-                                ", ${DateTime.now().minute.toString()}");
+                            //chatList.add(messageController.text +", ${DateTime.now().minute.toString()}");
                             messageController.clear();
                             // _controller.clear();
                             // new
@@ -213,8 +234,11 @@ class SecondePageMessage extends GetView<SecondePageMessageControllerImp> {
                     height: 42,
                     child: ElevatedButton(
                       onPressed: () {
-                        chatList.add(messageController.text +
-                            ", ${DateTime.now().minute.toString()}");
+                        setState(() {
+                          chatList.add(messageController.text );
+                        //_controller.clear();
+                         });
+                        
                         messageController.clear();
                         // setState(() {
                         //_controller.clear();

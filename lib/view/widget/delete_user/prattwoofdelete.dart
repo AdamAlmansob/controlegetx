@@ -1,13 +1,17 @@
+import 'package:controlgetx/control/deleteuser_controller.dart';
 import 'package:controlgetx/core/constant/color.dart';
 import 'package:controlgetx/view/widget/delete_user/custofparttwedelete.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class PartTwoOfDeletPage extends StatelessWidget {
   const PartTwoOfDeletPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<String> users = ["adam", "ahmed"];
+    DeleteUserControllerImp controllerdelete =
+        Get.put(DeleteUserControllerImp());
+
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Container(
@@ -24,9 +28,24 @@ class PartTwoOfDeletPage extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
-          children: const [
-            CustOfPartTwoDelete(),
-            CustOfPartTwoDelete(),
+          children: [
+            Container(
+              //padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                children: List.generate(
+                  controllerdelete.users.length,
+                  (index) => CustOfPartTwoDelete(
+                    product: controllerdelete.users,
+                  ),
+                ),
+              ),
+            ),
+
+            /////
+            //CustOfPartTwoDelete(product: users[index],),
+            //CustOfPartTwoDelete(product: users[index],),
           ],
         )
         // يتم استدعاء الجسم مع شريط تمرير الاختيار

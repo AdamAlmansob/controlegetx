@@ -17,7 +17,7 @@ class HomePageMessageControllerImp extends HomePageMessageController {
   //late PageController pageController;
   List _posts = [];
   late TextEditingController username;
-  late TextEditingController _postTitleTD;
+  late TextEditingController postTitleTD;
   late TextEditingController postTextTD;
 
   /*
@@ -90,7 +90,7 @@ class HomePageMessageControllerImp extends HomePageMessageController {
   @override
   _clearTextInput() {
     username.text = '';
-    _postTitleTD.text = '';
+    postTitleTD.text = '';
     postTextTD.text = '';
   }
 
@@ -98,7 +98,7 @@ class HomePageMessageControllerImp extends HomePageMessageController {
   void onInit() {
     _getPostss();
     username = TextEditingController();
-    _postTitleTD = TextEditingController();
+    postTitleTD = TextEditingController();
     postTextTD = TextEditingController();
     //phone = TextEditingController();
     //email = TextEditingController();

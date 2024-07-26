@@ -7,7 +7,9 @@ import 'package:get/get.dart';
 class LocaleController extends GetxController {
   Locale? language;
   Locale? theme;
-
+  var isl = false.obs;
+  var isd = false.obs;
+  //var isRegular = false.obs;
   MyServices myServices = Get.find();
 
   //ThemeData appTheme = themeEnglish;
@@ -28,11 +30,33 @@ class LocaleController extends GetxController {
     Get.updateLocale(locale);
   }
 
-  changeCheckboxx() {}
-
-  bool changeCheckbox() {
+  changeCheckboxx(String con) {
+    bool _isA = false;
+    bool _isE = false;
     bool choose = false;
-    return choose = !choose;
+    return (con=="ar")?choose! :choose;
+    //Get.updateLocale(l);
+    //return true;
+  }
+
+  bool changeCheckbox( String co) {
+    bool _isA = false;
+    bool _isE = false;
+    bool choose = false;
+    // "43".tr
+    if (co== "43".tr) {
+                    _isA = choose;
+                    _isE = false;
+                    return !_isA;
+                    //_isOwner = false;
+                  }
+                  else {
+                   _isE=choose; 
+                   _isA = false;
+      return !_isE ;
+    }
+
+    
     /*
    if (choose == false) {
       return choose=choose!;

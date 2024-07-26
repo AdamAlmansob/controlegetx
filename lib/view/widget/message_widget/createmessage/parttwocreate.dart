@@ -105,18 +105,18 @@ class _PartTwoCreateMessageState extends State<PartTwoCreateMessage> {
                           ),
                           */
                           const SizedBox(height: 20),
-                          /*
-                           TextField(
-                          controller: _postTitleTD,
-                          textAlign: TextAlign.end,
-                          style: const TextStyle(
+                          
+                           TextFormField(
+                                                     controller: controllerHomMess.postTitleTD,
+                                                     textAlign: TextAlign.end,
+                                                     style: const TextStyle(
                             fontSize: 20,
-                          ),
-                          decoration: const InputDecoration(
+                                                     ),
+                                                     decoration: const InputDecoration(
                             hintText: 'العنوان',
-                          ),
-                        ),
-                        */
+                                                     ),
+                                                   ),
+                        
                           const SizedBox(height: 20),
                           TextFormField(
                             controller: controllerHomMess.postTextTD,
