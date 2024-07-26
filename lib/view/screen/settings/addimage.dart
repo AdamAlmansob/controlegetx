@@ -2,6 +2,7 @@ import 'package:controlgetx/core/constant/color.dart';
 import 'package:controlgetx/view/widget/setting_widget/addimageofsetting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddImageAds extends StatelessWidget {
   const AddImageAds({super.key});
