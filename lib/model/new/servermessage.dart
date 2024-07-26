@@ -8,7 +8,10 @@ import 'dart:convert';
 //
 class Services {
   static var url = Uri.parse(
-      'https://dash.infinityfree.com/accounts/if0_35294550'); // https://dash.infinityfree.com/accounts/if0_35294550
+      //'http://dash.infinityfree.com/accounts/if0_35294550'
+      //'https://srv1338-files.hstgr.io/65776dd4fc394691/files/public_html/messageapp/post_api.php'
+      'https://alwahash.online/messageapp/post_api.php'
+      ); // https://dash.infinityfree.com/accounts/if0_35294550
 
   static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
   static const _ADD_POST_ACTION = 'ADD_POST';

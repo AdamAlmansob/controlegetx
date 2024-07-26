@@ -6,7 +6,7 @@ class AppLink {
 //
   static const String server =
       //"http://localhost/controlgetx";
-      "https://dash.infinityfree.com/accounts/if0_35310957/if0_35294550_controlgetx";
+      "http://dash.infinityfree.com/accounts/if0_35310957/if0_35294550_controlgetx";
   //"https://dash.infinityfree.com/accounts/if0_35294550/if0_35294550_controlgetx";
   // https://dash.infinityfree.com/accounts/if0_35294550/if0_35294550_controlgetx
   static const String test = "$server/test.php";

@@ -13,6 +13,9 @@ class PowersApp extends GetView<LocaleControllerPowers> {
 
   @override
   Widget build(BuildContext context) {
+    bool use=false;
+    bool use2=false;
+    bool use3=false;
     return Container(
         height: 250,
         decoration: BoxDecoration(
@@ -28,7 +31,7 @@ class PowersApp extends GetView<LocaleControllerPowers> {
             Text(
               "46".tr, //style: Theme.of(context).textTheme.headline1
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             /*
               CustomButtonLang(
                   textbutton: "40".tr,
@@ -49,17 +52,19 @@ class PowersApp extends GetView<LocaleControllerPowers> {
                   */
                   ),
               */
+            
             CustomButtonPowers(
               textbutton: "47".tr,
               onPressed: (c) {
                 controller.changePowers("47".tr, c);
                 c = u as bool;
-
+            
                 //Get.toNamed(AppRoute.configureApplication);
               },
-              use: u.isTrue,
+              //use: u.isTrue,
             ),
 
+            const SizedBox(height: 20),
             CustomButtonPowers(
               textbutton: "44".tr,
               onPressed: (c) {
@@ -68,8 +73,9 @@ class PowersApp extends GetView<LocaleControllerPowers> {
 
                 //Get.toNamed(AppRoute.configureApplication);
               },
-              use: u.value,
+              //use: u.value,
             ),
+            const SizedBox(height: 20),
             CustomButtonPowers(
               textbutton: "45".tr,
               onPressed: (c) {
@@ -77,7 +83,7 @@ class PowersApp extends GetView<LocaleControllerPowers> {
 
                 //Get.toNamed(AppRoute.configureApplication);
               },
-              use: u.value,
+              //use: u.value,
             ),
           ],
         ));

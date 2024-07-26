@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:controlgetx/control/deleteuser_controller.dart';
 import 'package:controlgetx/core/constant/color.dart';
 import 'package:controlgetx/view/widget/custmoutbondback.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PartOneOFPageDelete extends StatelessWidget {
+class PartOneOFPageDelete extends GetView<DeleteUserController> {
   const PartOneOFPageDelete({super.key});
 
   @override
@@ -57,7 +59,7 @@ class PartOneOFPageDelete extends StatelessWidget {
                         color: AppColor.primaryColor,
                       ),
                       onPressed: () {
-                        //controller.goToDrawer();
+                        //controller.funDeleteUser(index);
                         //controller._getPosts();
                         //_getPosts();
 

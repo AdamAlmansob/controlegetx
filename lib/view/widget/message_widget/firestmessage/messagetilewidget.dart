@@ -28,11 +28,15 @@ class MessageTileWidget extends StatelessWidget {
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.only(top: 5, right: 5, left: 5),
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         decoration: BoxDecoration(
-          color: (data.isReaded == true) ? Colors.white : AppColor.primaryColor,
+          //color: Colors.orange,
+          color: (data.isReaded == true) ? Colors.grey : AppColor.primaryColor,
+          //shape: ,
+          borderRadius: BorderRadiusDirectional.circular(15),
           //isPressed ?  Colors.white : Colors.orange,
-          border: Border(bottom: BorderSide(color: AppColor.grey, width: 1)),
+          //border: Border(bottom: BorderSide(color: AppColor.grey, width: 1)),
         ),
         child: Row(
           children: [

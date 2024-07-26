@@ -26,7 +26,7 @@ class LanguageApp extends GetView<LocaleController> {
             Text(
               "1".tr, //style: Theme.of(context).textTheme.headline1
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
             /*
               CustomButtonLang(
                   textbutton: "40".tr,
@@ -54,6 +54,7 @@ class LanguageApp extends GetView<LocaleController> {
 
                   //Get.toNamed(AppRoute.configureApplication);
                 }),
+            const SizedBox(height: 30),
             CustomButtonLang(
                 textbutton: "41".tr,
                 onPressed: () {

@@ -2,14 +2,20 @@
 //import 'package:controlgetx/core/localization/changelocal.dart';
 // ignore_for_file: unused_local_variable
 
+import 'package:controlgetx/core/localization/changelocal.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 //import 'package:get/get.dart';
 
+
+
 class CustomButtonLang extends StatelessWidget {
+  
+  //final LocaleController controller = Get.put(LocaleController());
   final String textbutton;
   final void Function()? onPressed;
   //final void Function(bool v)? onChanged;
-  const CustomButtonLang({
+   CustomButtonLang({
     Key? key,
     required this.textbutton,
     this.onPressed,
@@ -18,7 +24,9 @@ class CustomButtonLang extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool use = false;
+    bool _isArabic = false;
+    bool _isEnglish = false;
+    //bool use = false;
     bool tristate = false;
     return InkWell(
       onTap: onPressed,
@@ -27,31 +35,15 @@ class CustomButtonLang extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Checkbox(
-            //isThreeLinr:true,
-            //controlAffinity
-            //tristate: true,
-            //color: AppColor.primaryColor,
-            //tileColor: Colors.white,
-            //title: Text(textbutton,
-            //    style: const TextStyle(fontWeight: FontWeight.bold)),
-            value: use,
-            onChanged: (val) {
-              //onPressed;
-              use = true;
-            },
-
-            //textColor: Colors.white,
-            //onPressed: onPressed,
-            //child: Text(textbutton,
-            //    style: const TextStyle(fontWeight: FontWeight.bold)),
-          ),
+          
           Text(textbutton, style: const TextStyle(fontWeight: FontWeight.bold)),
         ],
       ),
     );
   }
 }
+
+
 
 
 /*
